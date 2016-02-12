@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>HTML & CSS Form Validation</title>
+
+<style>
+
+@font-face{	font-family: myFormFont;
+			src: url(Roboto-Regular.ttf);}
+
+body {	background-color:#cccc99;}
+
+h2 {	margin: initial;
+		padding-left: 20%;
+		font-family:myFormFont;
+		color: white;
+		border: 1px solid #cccc99;
+		border-radius:2px;
+		background: red;
+		border-top-left-radius: 17px;
+		border-top-right-radius: 17px;}
+
+form {	margin-left: 30%;
+   		margin-right: 30%;
+		width: 40%;
+		border: 2px solid #cccc99;
+		border-radius:20px;
+		background:white;}
+
+input{font-family:myFormFont;
+		margin-left: 35%; 
+		margin-right: 35%;
+		margin-top:2%;
+		margin-bottom:1%;
+		height:20px;
+		}
+input:required:invalid
+{	background-image: url(asterisk.png);
+    background-position: right top;
+    background-repeat: no-repeat;}
+
+input:focus:invalid
+{	background-image: url(Exclamation_mark.png);
+	border: solid 2px red;
+    background-position: right top;
+    background-repeat: no-repeat;}
+
+input:required:valid, input:focus:valid
+{	background-image: url(tick.png);
+	border: solid 2px green;
+    background-position: right top;
+    background-repeat: no-repeat;}
+
+button{	font-family:myFormFont;
+						font-size: 15px;
+						border: 1px solid #cccc99;
+						border-style: outset;
+						background: red;
+						color:white;
+						width:100px;
+						height:30px;
+						position: relative;
+						margin-top: 3%;
+						margin-left: 41%; 
+						margin-right:40%;
+						margin-bottom:3%;
+ }
+
+</style>
+</head>
+
+
+
+<body>
+<form>
+   <h2>HTML and CSS Form Validation</h2>
+   <input type="text" name="username" placeholder="Username" pattern="^[a-z0-9_-]{4,15}$" title="Username is 8-20 characters long with no special characters" required><br>
+   <input type="password" name="password" placeholder="Password" pattern=".{6,}" title="Six or more characters" required><br>
+   <input type="email" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required><br>
+   <input type="tel" name="mobno" placeholder="Mobile Number" pattern="^\d{10}$" required><br>
+   <input type="url" name="webaddr" placeholder="Web Address" "https?://.+" title="Include http://" required><br>
+   <button formnovalidate type="submit">Sign In</button>
+</form> 
+
+</body>
+</html> 
